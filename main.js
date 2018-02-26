@@ -23,9 +23,6 @@ var drawPixel = function (context, x, y) {
     context.fillRect( x, y-1, 1, 1);
 }
 
-var clearCanvas = function (context) {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-}
 
 // grab context
 var canvas = document.querySelector("#canvas");
@@ -114,6 +111,11 @@ var toggleCell = function(xPosition, yPosition) {
 };
 
 
+var clearCanvas = function (context) {
+    isAutomate = false;
+    generation = 0;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 
 var getNeighbors = function(cell) {
