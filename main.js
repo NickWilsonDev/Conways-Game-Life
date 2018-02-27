@@ -30,9 +30,9 @@ var context = canvas.getContext("2d");
 
 // map variable
 var map = [];
-var width = 40; //40;
-var height = 30; //25;
-var cellSize = 25; // was 20;
+var width = 100; //40;
+var height = 70; //25;
+var cellSize = 10; //25; // was 20;
 // t=0 is the first generation
 var generation = 0;
 // automatic generation option
@@ -64,7 +64,7 @@ var Cell = function(x, y) {
 
         //fill color
         if (this.isAlive) {
-            context.fillStyle = "#000"; //black color
+            context.fillStyle = 'blue'; //"#000"; //black color
         } else {
             context.fillStyle = "#f3f3f3"; // white color
         }
