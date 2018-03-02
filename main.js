@@ -171,34 +171,7 @@ var getNeighbors = function(cell) {
     neighborsCount = 0;
     var x = cell.x;
     var y = cell.y;
-/*
-    // check all 8 neighbors
-    if (x > 0 && map[x - 1][y].isAlive) {
-        neighborsCount++;
-    }
-    if (x < width - 1 && map[x + 1][y].isAlive) {
-        neighborsCount++;
-    }
-    if (y < height - 1 && map[x][y + 1].isAlive) {
-        neighborsCount++;
-    }
-    if (y > 0 && map[x][y - 1].isAlive) {
-        neighborsCount++;
-    }
-
-    if (x > 0 && y > 0 && map[x - 1][y - 1].isAlive) {
-        neighborsCount++;
-    }
-    if (x < width - 1 && y > 0 && map[x + 1][y - 1].isAlive) {
-        neighborsCount++;
-    }
-    if (y < height - 1 && x > 0 && map[x - 1][y + 1].isAlive) {
-        neighborsCount++;
-    }
-    if (x < width - 1 && y < height - 1 && map[x + 1][y + 1].isAlive) {
-        neighborsCount++;
-    }
-*/
+    
     // check all 8 neighbors
     if (x > 0 && map[x - 1][y].isAlive) {
         neighborsCount++;
