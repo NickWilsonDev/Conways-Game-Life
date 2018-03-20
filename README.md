@@ -11,3 +11,5 @@ A cellular automaton.
 [wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 A very helpful [tutorial](http://siteoftutorials.com/conways-game-life-javascript-tutorial/)
+
+live [demo](https://nickwilsondev.github.io/Conways-Game-Life/)
