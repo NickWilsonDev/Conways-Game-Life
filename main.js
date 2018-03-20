@@ -10,11 +10,6 @@
 
 
 var drawPixel = function (context, x, y) {
-    //r = 0;
-    //g = 0;
-    //b = 0;
-    //a = 1;
-    //context.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
     context.fillStyle = 'blue';
     context.fillRect( x, y, 1, 1 );
     context.fillRect( x+1, y, 1, 1);
@@ -22,7 +17,6 @@ var drawPixel = function (context, x, y) {
     context.fillRect( x, y+1, 1, 1);
     context.fillRect( x, y-1, 1, 1);
 }
-
 
 // grab context
 var canvas = document.querySelector("#canvas");
@@ -33,19 +27,14 @@ var map = [];
 var width = 100; //40;
 var height = 70; //25;
 var cellSize = 10; //25; // was 20;
-// t=0 is the first generation
 var generation = 0;
 // automatic generation option
 var isAutomate = false;
-// FPS draw update variables
 var fps = 5;
 var now;
 var then = Date.now();
 var interval = 1000 / fps;
 var delta;
-//drawPixel(cx, 10, 10);
-
-
 
 // Cell class
 var Cell = function(x, y) {
@@ -74,7 +63,6 @@ var Cell = function(x, y) {
     }
 };
 
-
 var initializeMap = function () {
     for (var i = 0; i < width; i++) {
         var temp = []
@@ -90,8 +78,6 @@ var on_canvas_click = function(event) {
     var xPosition = event.clientX - canvas.offsetLeft;
     var yPosition = event.clientY - canvas.offsetTop;
     toggleCell(xPosition, yPosition);
-    //toggleCell(event.clientX, event.clientY);
-    //drawPixel(context, event.clientX, event.clientY);
 };
 
 
@@ -110,7 +96,6 @@ var toggleCell = function(xPosition, yPosition) {
         }
     }
 };
-
 
 var clearCanvas = function () {
     isAutomate = false;
@@ -160,7 +145,6 @@ var randomPop = function () {
             if (rand === 0 || rand % 2 === 0) {
                 temporaryMap[i][j].isAlive = true;
                 toggleCell(i, j);
-
             }
         }
     }
@@ -171,7 +155,7 @@ var getNeighbors = function(cell) {
     neighborsCount = 0;
     var x = cell.x;
     var y = cell.y;
-    
+
     // check all 8 neighbors
     if (x > 0 && map[x - 1][y].isAlive) {
         neighborsCount++;
@@ -198,11 +182,8 @@ var getNeighbors = function(cell) {
     if (x < width - 1 && y < height - 1 && map[x + 1][y + 1].isAlive) {
         neighborsCount++;
     }
-
     return neighborsCount;
 };
-
-
 
 function animate() {
   requestAnimationFrame(animate);
@@ -218,7 +199,6 @@ function animate() {
     document.getElementById("generationSpan").textContent=generation;
   }
 };
-
 
 function drawCells(){
   // Draw all cells
@@ -278,8 +258,6 @@ function applyRules() {
   generation++; // increase the generation 
 };
 
-
 //function calls
 initializeMap();
 animate();
-
